@@ -103,6 +103,12 @@ h1 {
     grid-gap: 10px;
     margin-top: 20px;
     animation: scaleUp 0.7s ease-in-out;
+
+    /* Центрирование по горизонтали */
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; /* Чтобы width не был 100% */
+
 }
 
 .cell {
@@ -278,11 +284,6 @@ h1 {
     cursor: pointer;
 }
 
-/* ... (Предыдущие стили) ... */
-
-/* ... (Предыдущие стили) ... */
-
-/* ... (Предыдущие стили) ... */
 
 .floating-line {
     position: absolute;
@@ -295,6 +296,8 @@ h1 {
     white-space: normal; /* Разрешаем перенос строк */
     max-width: 220px; /* Увеличиваем максимальную ширину */
     word-wrap: break-word; /* Переносим слова, если не помещаются */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* ... (Остальные стили) ... */
