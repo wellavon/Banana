@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #eee;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #e74c3c, #f1c40f, #e67e22, #9b59b6);
+    background-size: 400% 400%;
+    animation: neonBackground 10s ease infinite;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+@keyframes neonBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    border: 2px solid #222;
+    position: relative; /* Add this to make absolute positioning relative to the container */
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 17px;
+    background: linear-gradient(45deg, #f44336, #ffeb3b, #ff9800);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.container:hover::before {
+    opacity: 0.7;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #ffeb3b;
+    text-shadow: 0 0 15px #ffeb3b;
+    animation: neonText 1.5s ease infinite alternate;
+}
+
+@keyframes neonText {
+    0% {
+        text-shadow: 0 0 10px #ffeb3b;
+    }
+    100% {
+        text-shadow: 0 0 20px #ffca28;
+    }
+}
+
+.subtitle {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    color: #f1c40f;
+    text-shadow: 0 0 8px #f1c40f;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-gap: 10px;
+    margin-top: 20px;
+    animation: scaleUp 0.7s ease-in-out;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8em;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.cell:hover {
+    background-color: #333;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.message {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #e67e22;
+    text-shadow: 0 0 5px #e67e22;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.restart-button {
+    padding: 12px 25px;
+    font-size: 1em;
+    background-color: #e74c3c;
+    color: #eee;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.08);
+    animation: glow 1.5s ease infinite alternate;
+}
+
+.restart-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 3px 10px rgba(255, 255, 255, 0.08);
+    }
+    100% {
+        box-shadow: 0 3px 15px rgba(255, 255, 255, 0.12);
+    }
+}
+
+.banana {
+    color: #ffda63;
+    text-shadow: 0 0 5px #ffda63;
+    animation: wobble 1.5s infinite;
+}
+
+.strawberry {
+    color: #e57373;
+    text-shadow: 0 0 5px #e57373;
+    animation: shake 1s infinite;
+}
+
+@keyframes wobble {
+    0% {
+        transform: translateX(0);
+    }
+    15% {
+        transform: translateX(-3px) rotate(-3deg);
+    }
+    30% {
+        transform: translateX(2px) rotate(2deg);
+    }
+    45% {
+        transform: translateX(-2px) rotate(-2deg);
+    }
+    60% {
+        transform: translateX(1px) rotate(1deg);
+    }
+    75% {
+        transform: translateX(-1px) rotate(-1deg);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #111;
+    margin: 15% auto;
+    padding: 25px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    animation: zoomIn 0.5s ease-in-out;
+    box-sizing: border-box;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px #aaa;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ... (Предыдущие стили) ... */
+
+/* ... (Предыдущие стили) ... */
+
+/* ... (Предыдущие стили) ... */
+
+.floating-line {
+    position: absolute;
+    font-size: 1.1em;
+    color: #f1c40f;
+    text-shadow: 0 0 5px #f1c40f;
+    z-index: 10;
+    pointer-events: none;
+    animation: float 3s ease-out;
+    white-space: normal; /* Разрешаем перенос строк */
+    max-width: 220px; /* Увеличиваем максимальную ширину */
+    word-wrap: break-word; /* Переносим слова, если не помещаются */
+}
+
+/* ... (Остальные стили) ... */
+
+@keyframes float {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.game-button {
+    padding: 12px 25px;
+    font-size: 1em;
+    background-color: #e67e22;
+    color: #eee;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.08);
+}
+
+.game-button:hover {
+    background-color: #d35400;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.choose-fruit-text {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #f39c12;
+    text-shadow: 0 0 5px #f39c12;
+}
+
+.fruit-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.fruit-button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    background-color: #333;
+    color: #ffeb3b;
+    border: 1px solid #555;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.08);
+}
+
+.fruit-button:hover {
+    background-color: #444;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.home-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 8px 12px;
+    background-color: #333;
+    color: #f1c40f;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+}
+
+.home-button:hover {
+    background-color: #444;
+}

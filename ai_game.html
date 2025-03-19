@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банан против Клубники (Против компьютера)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Банан против Клубники (Против компьютера)</h1>
+        <a href="index.html" class="home-button">На главную</a>
+
+        <div id="fruit-choice" class="modal">
+            <div class="modal-content">
+                <p class="choose-fruit-text">Выберите свой фрукт:</p>
+                <div class="fruit-buttons">
+                    <button id="choose-banana" class="fruit-button">🍌</button>
+                    <button id="choose-strawberry" class="fruit-button">🍓</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="message">
+            <p id="message-text"></p>
+        </div>
+
+        <div class="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <button id="restart-button" class="restart-button">Новая игра</button>
+
+        <div id="win-message" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="win-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="ai_script.js"></script>
+</body>
+</html>
